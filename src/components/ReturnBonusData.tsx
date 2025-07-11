@@ -302,44 +302,44 @@ const ReturnBonusData: React.FC<Props> = ({ referrerId, setReferrerId, users, re
                             </tr>
                             <tr>
                                 <th className="border border-gray-400 px-4 py-2 text-center">
-                                {(() => {
-                                    const total = grandTotalPol;
-                                    const returnKeep = (total / 75) * 25;
-                                    const directReturn = total + returnKeep;
+                                    {(() => {
+                                        const total = grandTotalPol;
+                                        const returnKeep = (total / 75) * 25;
+                                        const directReturn = total + returnKeep;
 
-                                    const formatNumber = (num) =>
-                                    num.toLocaleString('en-US', {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                    });
+                                        const formatNumber = (num: number) =>
+                                        num.toLocaleString('en-US', {
+                                            minimumFractionDigits: 2,
+                                            maximumFractionDigits: 2,
+                                        });
 
-                                    return (
-                                    <>
-                                        <p className="text-[18px]">
-                                        ยอดรวม
-                                        <span className="text-[24px] text-yellow-500 animate-blink">
-                                            &nbsp;{formatNumber(directReturn)}&nbsp;
-                                        </span>{' '}
-                                        POL
-                                        </p>
-                                        <p className="text-[18px]">
-                                         เก็บสะสม 25%{' '}
-                                        <span className="text-[24px] text-yellow-500 animate-blink">
-                                            &nbsp;{formatNumber(returnKeep)}&nbsp;
-                                        </span>{' '}
-                                        POL
-                                        </p>
-                                        <p className="text-[18px]">
-                                        ยอดรับ{' '}
-                                        <span className="text-[24px] text-yellow-500 animate-blink">
-                                            &nbsp;{formatNumber(total)}&nbsp;
-                                        </span>{' '}
-                                        POL
-                                        </p>
-                                    </>
-                                    );
-                                })()}
-                            </th>
+                                        return (
+                                        <>
+                                            <p className="text-[18px]">
+                                            ยอดรวม
+                                            <span className="text-[24px] text-yellow-500 animate-blink">
+                                                &nbsp;{formatNumber(directReturn)}&nbsp;
+                                            </span>{' '}
+                                            POL
+                                            </p>
+                                            <p className="text-[18px]">
+                                             เก็บสะสม 25%{' '}
+                                            <span className="text-[24px] text-yellow-500 animate-blink">
+                                                &nbsp;{formatNumber(returnKeep)}&nbsp;
+                                            </span>{' '}
+                                            POL
+                                            </p>
+                                            <p className="text-[18px]">
+                                            ยอดรับ{' '}
+                                            <span className="text-[24px] text-yellow-500 animate-blink">
+                                                &nbsp;{formatNumber(total)}&nbsp;
+                                            </span>{' '}
+                                            POL
+                                            </p>
+                                        </>
+                                        );
+                                    })()}
+                                </th>
                             </tr>
                             <tr>
                                 <th className="border border-gray-400 px-4 py-2 text-center">
