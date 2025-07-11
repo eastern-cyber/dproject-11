@@ -297,19 +297,42 @@ const ReturnBonusData: React.FC<Props> = ({ referrerId, setReferrerId, users, re
                             <tr className="bg-gray-900 text-[19px] font-bold">
                                 <th className="border border-gray-400 py-3 px-4 text-center">
                                     <p className="text-[19px] m-2 font-semibold">ส่วนแบ่งรายได้  Return Bonus</p>
+                                    <p className="text-[19px] m-2 font-semibold">100% Caring Bonus ของ Direct PR</p>
                                 </th>
                             </tr>
                             <tr>
                                 <th className="border border-gray-400 px-4 py-2 text-center">
-                                    <p className="text-[18px]">
-                                        ยอดรวมที่ท่านจะได้รับ <span className="text-[24px] text-yellow-500 animate-blink">{grandTotalPol.toFixed(2)}</span> POL
-                                    </p>
-                                    {/* <p className="text-[18px]">
-                                        รับแล้ว <span className="text-[24px] text-green-500 animate-blink">{totalSentAmount}</span> POL
-                                    </p>
-                                    <p className="text-[18px]">
-                                        ยอดใหม่ <span className="text-[24px] text-red-500 animate-blink">{matchingUsers.length * 12 - totalSentAmount}</span> POL
-                                    </p> */}
+                                    {(() => {
+                                        const total = grandTotalPol;
+                                        const returnKeep = (total / 75) * 25 ;
+                                        const directReturn = total + returnKeep;
+
+                                        return (
+                                        <>
+                                            <p className="text-[18px]">
+                                            ยอดรวม
+                                            <span className="text-[24px] text-yellow-500 animate-blink">
+                                                &nbsp;{directReturn.toFixed(2)}&nbsp;
+                                            </span>{' '}
+                                            POL
+                                            </p>
+                                            <p className="text-[18px]">
+                                             เก็บสะสม 25%{' '}
+                                            <span className="text-[24px] text-yellow-500 animate-blink">
+                                                &nbsp;{returnKeep.toFixed(2)}&nbsp;
+                                            </span>{' '}
+                                            POL
+                                            </p>
+                                            <p className="text-[18px]">
+                                            ยอดรับ{' '}
+                                            <span className="text-[24px] text-yellow-500 animate-blink">
+                                                &nbsp;{total.toFixed(2)}&nbsp;
+                                            </span>{' '}
+                                            POL
+                                            </p>
+                                        </>
+                                        );
+                                    })()}
                                 </th>
                             </tr>
                             <tr>
